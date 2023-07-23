@@ -1,4 +1,3 @@
-require("dotenv").config();
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose, { Schema } from "mongoose";
@@ -14,14 +13,7 @@ app.set("view engine","ejs");
 let name;
 
 //mogo db connection and schema defining
-// mongoose.connect("mongodb://localhost:27017/portfolio").then(()=>
-// {
-//     console.log("connected to mongodb");
-// }).catch((e)=>
-// {
-//     console.log(e);
-// })
-mongoose.connect(process.env.MONGO_URL).then(()=>
+mongoose.connect("mongodb://localhost:27017/portfolio").then(()=>
 {
     console.log("connected to mongodb");
 }).catch((e)=>
